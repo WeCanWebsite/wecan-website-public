@@ -6,38 +6,50 @@
     <title>WeCan LLC - IT Consulting Solutions</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
         }
         header {
-            background-color: #007BFF;
+            background: linear-gradient(90deg, #0056b3, #007BFF);
             color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            background-color: #0056b3;
-            color: white;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
+            position: relative;
         }
-        nav a {
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: bold;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
-        nav a:hover {
-            text-decoration: underline;
+        header nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .hero {
-            background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+            background: url('background.png') no-repeat center center/cover;
             height: 500px;
             display: flex;
             justify-content: center;
@@ -50,11 +62,24 @@
             font-size: 3rem;
             margin: 0;
         }
-        .services, .about, .contact, .credibility {
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .hero button:hover {
+            background-color: #0056b3;
+        }
+        .services, .about, .contact {
             padding: 40px 20px;
             text-align: center;
         }
-        .services h3, .about h3, .contact h3, .credibility h3 {
+        .services h3, .about h3, .contact h3 {
             margin-bottom: 20px;
             color: #007BFF;
         }
@@ -65,6 +90,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .services .service-item:hover {
+            transform: translateY(-10px);
         }
         .services .service-item h4 {
             color: #0056b3;
@@ -74,25 +103,48 @@
             padding: 20px 0;
             text-align: center;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form input, form textarea, form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        form button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>WeCan LLC</h1>
-        <p>Your Partner in Salesforce and UiPath IT Consulting</p>
-    </header>
-    <nav>
-        <div>
+        <div class="logo">
+            <img src="wecanlogo.webp" alt="WeCan LLC Logo">
+            <!-- <h1>WeCan LLC</h1> -->
+        </div>
+        <nav>
             <a href="#services">Services</a>
             <a href="#about">About Us</a>
-            <a href="#credibility">Credibility</a>
             <a href="#contact">Contact</a>
-        </div>
-    </nav>
+        </nav>
+    </header>
     <section class="hero">
         <div>
             <h2>Empower Your Business with Automation and CRM Excellence</h2>
             <p>Streamline processes, enhance customer engagement, and optimize efficiency with our tailored solutions.</p>
+            <button>Get Started</button>
         </div>
     </section>
     <section id="services" class="services">
@@ -115,23 +167,15 @@
         <p>At WeCan LLC, we are committed to delivering exceptional IT consulting services that empower businesses to achieve their goals. With expertise in Salesforce and UiPath technologies, we help organizations optimize operations, enhance customer engagement, and drive innovation.</p>
         <p>Our mission is to be the go-to partner for businesses looking to leverage the power of CRM and automation. Whether you are a small business or a large enterprise, WeCan LLC is here to deliver solutions that work for you.</p>
     </section>
-    <section id="credibility" class="credibility">
-        <h3>Our Credibility</h3>
-        <p>WeCan LLC is led by professionals with extensive experience in IT consulting, digital transformation, and technology leadership. Our accomplishments include:</p>
-        <ul>
-            <li>Leading an RPA team to automate repetitive business processes with 2 production releases per month.</li>
-            <li>Establishing unified Azure DevOps solution architecture for RPA, Salesforce CRM, API, Web, and cloud data platforms.</li>
-            <li>Designing and developing real-time fraud detection systems processing billions of transactions.</li>
-            <li>Leading cloud data platform infrastructure projects capable of provisioning environments in under 20 minutes.</li>
-            <li>Providing hands-on training to developers for adopting modern DevOps tools and practices.</li>
-            <li>Developing scalable teller-facing applications for financial services, enhancing operational efficiency across 300 branches.</li>
-            <li>Extensive experience in API and app development, automated application provisioning, and deployment in Kubernetes environments.</li>
-        </ul>
-        <p>With a proven track record of delivering results across industries such as finance, healthcare, and retail, we ensure your business stays ahead in today’s competitive landscape.</p>
-    </section>
     <section id="contact" class="contact">
         <h3>Contact Us</h3>
         <p>Get in touch with us for a free consultation and learn how we can transform your business.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
         <p>Email: info@wecanllc.com | Phone: (123) 456-7890</p>
         <p>Address: 123 Business Park Drive, Suite 100, Tech City, USA</p>
         <p>Follow us on: <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
